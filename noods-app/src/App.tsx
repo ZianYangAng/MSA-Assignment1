@@ -4,9 +4,11 @@ import AppBar from './components/AppBar'
 import Input from '@material-ui/core/Input';
 import logo from './pic.svg';
 import Button from '@material-ui/core/Button';
+import { MealsDBApiService } from './MealsDBApiService'
+
+let call = new MealsDBApiService()
 
 class App extends React.Component {
-
 
   public render() {
     return (
@@ -20,8 +22,8 @@ class App extends React.Component {
         </p>
         <p>
           <Input className="input" placeholder="Search for a recipe here"/>
-          <Button variant='contained' color='inherit'>
-            Search
+          <Button variant='contained' color='inherit' onClick={call.getRandomRequest}>
+              Search
           </Button>
         </p>
         </header>
