@@ -27,7 +27,7 @@ function INGREDIENTSLIST(recipe: any) {
 }
 
 export class MealsDBApiService {
-  getSearchRequest(mealName: string) {
+  getSearchRequest(mealName: string, cb:(recipe:Recipe) => any) {
     request.get(
       "https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealName,
       OPTIONS,
@@ -45,12 +45,12 @@ export class MealsDBApiService {
       OPTIONS,
       (error: any, response: any, body: any) => {
         let meals: any[] = body.meals[0];
-        // console.log("This is the meal: " + JSON.stringify(meals));
         let ingredientsArray: any[] = INGREDIENTSLIST(meals);
-        // console.log("This is the meal: " + JSON.stringify(ingredientsArray));
-        let recipe = new Recipe(meals, ingredientsArray, ingredientsArray.length);
-        // console.log('Instructions :' + recipe.instructions);
-        // console.log('MealName :' + recipe.mealName);
+        let recipe = new Recipe(
+          meals,
+          ingredientsArray,
+          ingredientsArray.length
+        );
         cb(recipe);
       }
     );
