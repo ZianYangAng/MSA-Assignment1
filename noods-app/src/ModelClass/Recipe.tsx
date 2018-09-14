@@ -1,14 +1,17 @@
-
 export class Recipe {
-    mealName:string
-    thumbnail:string
-    instructions: string
-    ingredients: {[key:string]:string} 
+  mealName: string;
+  thumbnail: string;
+  instructions: string;
+  index:number
+  ingredients: any[];
 
-    constructor(dbRespone: any, ingredientsMap:any) {
-        this.mealName = dbRespone.strMeal;
-        this.thumbnail = dbRespone.strMealThumb;
-        this.instructions = dbRespone.strInstructions;
-        this.ingredients = ingredientsMap;
-    }
+  constructor(dbRespone: any, ingredientsArray: any, num:any) {
+    this.mealName = dbRespone.strMeal;
+    this.thumbnail = dbRespone.strMealThumb;
+    this.instructions = dbRespone.strInstructions;
+    this.ingredients = ingredientsArray;
+    this.index = num;
+  }
+
 }
+
