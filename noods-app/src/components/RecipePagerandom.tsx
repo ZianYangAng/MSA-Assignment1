@@ -52,8 +52,6 @@ class RandomRecipePage extends React.Component<{}, IState> {
       });
       this.setState({ randomingredientList: ingredientList });
     });
-    // console.log(ingredientList);
-    // console.log(this.state.randomThumbnail);
   }
 
   render() {

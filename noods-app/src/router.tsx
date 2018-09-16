@@ -4,7 +4,7 @@ import App from "./App";
 import "./App.css";
 import AppBar from "./components/AppBar";
 import RandomRecipePage from "./components/RecipePagerandom";
-import SearchRecipePage from "./components/RecipePageSearch"
+import SearchRecipePage from "./components/RecipePageSearch";
 
 export const AppRouter: React.StatelessComponent<{}> = () => {
   return (
@@ -14,8 +14,8 @@ export const AppRouter: React.StatelessComponent<{}> = () => {
         <main className="App">
           <Route exact={true} path="/" component={App} />
           <Route path="/RandomRecipe" component={RandomRecipePage} />
-          <Route path="/Search" component={SearchRecipePage}/>
-          <Redirect from="*" to="/"/>
+          <Route path="/Search" component={SearchRecipePage} />
+          <Redirect from="*" to="/" />
         </main>
       </div>
     </BrowserRouter>
