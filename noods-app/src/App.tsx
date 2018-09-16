@@ -4,10 +4,11 @@ import Input from "@material-ui/core/Input";
 import logo from "./pic.svg";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-// import { MealsDBApiService } from './MealsDBApiService'
+import { MealsDBApiService } from './MealsDBApiService'
+import { Recipe } from "./ModelClass/Recipe";
 
 export let name: string;
-// let poop = new MealsDBApiService()
+let poop = new MealsDBApiService()
 interface IState {
   searchInput: string;
 }
@@ -64,8 +65,9 @@ class App extends React.Component<{}, IState> {
                 variant="contained"
                 color="inherit"
                 onClick={() =>
-                  this.settingName(this.state.searchInput)
-                  }
+                  poop.getSearchRequest(this.state.searchInput, (recipe:Recipe) =>{
+                    console.log('hello ' + JSON.stringify(recipe.error))
+                  })}
               >
                 Search
               </Button>

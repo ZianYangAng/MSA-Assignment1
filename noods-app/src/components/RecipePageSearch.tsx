@@ -1,6 +1,6 @@
 import { name } from "./../App";
-import { MealsDBApiService } from './../MealsDBApiService'
-import { Recipe } from "../ModelClass/Recipe";
+// import { MealsDBApiService } from './../MealsDBApiService'
+// import { Recipe } from "../ModelClass/Recipe";
 import * as React from "react";
 // import Card from "@material-ui/core/Card";
 // import CardContent from "@material-ui/core/CardContent";
@@ -38,10 +38,10 @@ class SearchRecipePage extends React.Component<{}, IState> {
 
   componentDidMount() {
     console.log(this.state.userInput)
-    let apiCall = new MealsDBApiService();
-    apiCall.getSearchRequest(this.state.userInput, (recipe:Recipe) => {
+    // let apiCall = new MealsDBApiService();
+    // apiCall.getSearchRequest(this.state.userInput, (recipe:Recipe) => {
 
-    })
+    // })
   }
 
   render() {
