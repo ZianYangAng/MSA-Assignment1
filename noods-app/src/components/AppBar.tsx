@@ -7,7 +7,7 @@ const ApplBar = () => {
     <AppBar position="static" style={{ backgroundColor: "black" }}>
       <Toolbar>
         <Typography variant="title" color="inherit">
-          <Link style={{ color: "white" }} to="/">
+          <Link style={{ color: "white" , textDecorationLine: 'none'}} to="/" >
             {" "}
             Home{" "}
           </Link>

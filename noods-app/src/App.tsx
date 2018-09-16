@@ -43,14 +43,15 @@ class App extends React.Component<{}, IState> {
             <Input
               placeholder="Search for a recipe here"
               onChange={this.setSearchInput}
+              color='black'
             />
             <p className="input">
-              <Link to="/RandomRecipe">
+              <Link to="/RandomRecipe" style={{textDecoration:'none', color: 'black'}}>
                 <Button variant="contained" color="inherit">
                   Random
                 </Button>
               </Link>
-              <Link to="/Search">
+              <Link to="/Search" style={{textDecoration:'none', color: 'black'}}>
                 <Button
                   variant="contained"
                   color="inherit"
